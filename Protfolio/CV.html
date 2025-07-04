@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nadir Jamal - CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1f242d;
+      --accent: #0ef;
+      --light: #999;
+      --text: #333;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      padding: 3rem 5vw;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: var(--light);
+    }
+
+    .contact i {
+      margin-right: 6px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: #ddd;
+      margin: 1.5rem 0;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .item {
+      margin-bottom: 1.5rem;
+    }
+
+    .item-title {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-title span {
+      font-size: 0.95rem;
+      color: var(--light);
+      font-weight: normal;
+    }
+
+    .institution {
+      font-style: italic;
+      color: var(--light);
+      margin-bottom: 4px;
+    }
+
+    .gpa {
+      color: rgba(241, 17, 17, 0.921);
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 5px;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+      padding-left: 1rem;
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .tech {
+      font-style: italic;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Nadir Jamal</h1>
+  <div class="contact">
+    <p>📍 HaroonAbad, Pakistan | 📞 +92 3126016775 | 📧 jamalnadir7778@gmail.com</p>
+  </div>
+  <hr />
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-title">FSC <span>2021–2023</span></div>
+      <div class="institution">Rangers Cadet College, Chakri</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title">BS Computer Science <span>2024–2028</span></div>
+      <div class="institution">University of Engineering and Technology, Lahore</div>
+      <p class="gpa">CGPA: 3.4 / 4.00</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="item">
+      <div class="item-title">ITEC Management System <span class="tech">C#, MySQL, WinForms, OOP</span></div>
+      <ul>
+        <li>Event management desktop application for participants, finances, and venue control</li>
+        <li>3-layered architecture with business logic and database integration</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Poultry Farm System <span class="tech">C#, WinForms, SQL</span></div>
+      <ul>
+        <li>Mortality tracking and batch management with SQL queries</li>
+        <li>Auto-calculation of remaining count, real-time validation</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Car Rental System (WinForms) <span class="tech">C#, MySQL</span></div>
+      <ul>
+        <li>Rental management system with customer, vehicle & billing modules</li>
+        <li>Interactive forms and solid architecture design</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Car Rental System (Console) <span class="tech">C++</span></div>
+      <ul>
+        <li>Console-based vehicle renting system with file handling and menu-driven UI</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Sky Rockets Game <span class="tech">C++</span></div>
+      <ul>
+        <li>Console-based game built using OOP principles</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-title">Portfolio Website <span class="tech">HTML, CSS, Boxicons</span></div>
+      <ul>
+        <li>Fully responsive personal site to showcase resume and projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="tags">
+      <span class="tag">C++</span>
+      <span class="tag">C#</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Python</span>
+      <span class="tag">HTML</span>
+      <span class="tag">CSS</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">WinForms</span>
+      <span class="tag">OOP</span>
+      <span class="tag">SOLID Principles</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <ul>
+      <li>English – Fluent</li>
+      <li>Urdu – Native</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Interests</h2>
+    <ul>
+      <li>Application Development</li>
+      <li>UI/UX Design</li>
+      <li>Gaming</li>
+      <li>Sports</li>
+    </ul>
+  </section>
+</body>
+
+</html>

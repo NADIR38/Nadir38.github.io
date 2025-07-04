@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@motionone/dom"></script>
+
+
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            z-index: 100;
+            background-color: var(--bg-color);
+
+
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-left: 0;
+            margin-right: 35rem;
+
+
+        }
+
+        .navbar a {
+            font-size: 1.7rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #0ef;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 2rem;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--second-bg-color);
+        }
+
+        .about-content {
+            flex: 1 1 45rem;
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .about-content h3 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.7rem;
+            text-align: justify;
+        }
+
+        .main {
+            background: var(--second-bg-color);
+        }
+
+        .imgabout {
+            flex: 1 1 35rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .imgabout img {
+            width: 35rem;
+            height: 45rem;
+            border-radius: 2rem;
+            box-shadow: 0 0 2rem var(--main-color);
+            object-fit: cover;
+
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        span {
+            color: #0ef;
+        }
+
+        .skills {
+            background: var(--bg-color);
+            padding-top: 1rem;
+            width: 90%;
+            border: 5px solid var(--main-color);
+            border-radius: 20px;
+            box-shadow: 0 0 2rem var(--main-color);
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 35px;
+            margin-bottom: 2rem;
+        }
+
+        .passion {
+            text-align: center;
+            width: 90%;
+            padding: 2rem;
+            border: 5px solid var(--main-color);
+            margin-left: 75px;
+            margin-right: 100px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            margin-top: 2rem;
+            transition: 0.3s ease-out;
+
+        }
+
+        .passion:hover {
+            box-shadow: 0 0 2rem var(--main-color);
+            transform: translateY(-5px);
+        }
+
+        .passion h3 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            padding-bottom: .1rem;
+        }
+
+        .skill-content {
+            text-align: center;
+            width: 90%;
+            padding: 1rem;
+            border: 5px solid var(--main-color);
+            margin-left: 75px;
+            margin-right: 100px;
+            margin-top: 1rem;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            transition: 0.3s ease-out;
+
+        }
+
+        .skill-content:hover {
+            box-shadow: 0 0 2rem var(--main-color);
+            transform: translateY(-5px);
+        }
+
+        .skill-content h3 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .passion p {
+            text-align: justify;
+            padding: 2rem 2rem;
+            font-size: 1.6rem;
+            line-height: 1.8;
+        }
+
+        .skill-content p {
+            font-size: 1.6rem;
+            margin-bottom: 4rem;
+            color: var(--text-color);
+        }
+
+        .skill-list {
+            display: -webkit-flex;
+            flex-wrap: wrap;
+            object-fit: cover;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .skill-item {
+            background: var(--second-bg-color);
+            border-radius: 1rem;
+            box-shadow: 0 0 10px var(--main-color);
+            padding: 2rem;
+            width: 150px;
+            text-align: center;
+            transition: transform 0.3s ease;
+
+        }
+
+        .skill-item i {
+            font-size: 3.4rem;
+            margin-bottom: 1rem;
+            color: #0ef;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px var(--main-color);
+        }
+
+        .skill-item h4 {
+            font-size: 1.7rem;
+            object-fit: cover;
+            font-weight: 900;
+        }
+
+        .footer {
+            background: var(--second-bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 5rem 9% 2rem;
+            gap: 3rem;
+        }
+
+        .footer-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--main-color);
+        }
+
+        .footer-box p,
+        .footer-box a {
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+            color: var(--text-color);
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .footer-box a:hover {
+            color: var(--main-color);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            padding-top: 3rem;
+            font-size: 1.3rem;
+            border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+
+        strong {
+            color: #0ef;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header " data-aos="fade-down">
+        <a href="#" class="logo">Nadir Jamal</a>
+        <nav class="navbar">
+            <a href="Index.html">Home</a>
+            <a href="#about" class="active">About</a>
+            <a href="#skills">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="#footer">Contact</a>
+        </nav>
+    </header>
+    <section class="about" data-aos="fade-up">
+        <div class="imgabout">
+            <img src="ReLens_Image_2025-01-02_11_30_08_720x1280.jpg" alt="">
+        </div>
+        <div class="about-content">
+            <h3>About <span> Me</span></h3>
+            <p>
+                I'm <span>Nadir Jamal</span>, an enthusiastic and detail-oriented application developer with a passion
+                for building impactful software. Currently pursuing my degree in Computer Science, I have hands-on
+                experience creating desktop and web applications using technologies like <strong>C#</strong>,
+                <strong>MySQL</strong>, <strong>WinForms</strong>, and <strong>HTML/CSS/JS</strong>. I enjoy solving
+                real-world problems through clean, efficient code and constantly strive to improve my technical and
+                design skills. Whether it's crafting intuitive user interfaces or implementing robust back-end logic, I
+                aim to deliver high-quality solutions that make a difference.
+            </p>
+
+        </div>
+    </section>
+    <section class="skills" data-aos="zoom-in">
+        <div class="skill-content">
+            <h3>My <span>Skills</span></h3>
+            <p>I’m skilled in a variety of programming languages and tools used in desktop and web application
+                development.</p>
+
+            <div class="skill-list">
+                <div class="skill-item">
+                    <i class='bx bxl-c-plus-plus'></i>
+                    <h4>C++</h4>
+                </div>
+                <div class="skill-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>C#</h4>
+
+                </div>
+                <div class="skill-item">
+                    <i class='bx bxl-html5'></i>
+                    <h4>HTML</h4>
+                </div>
+                <div class="skill-item">
+                    <i class='bx bxl-css3'></i>
+                    <h4>CSS</h4>
+                </div>
+                <div class="skill-item">
+                    <i class='bx bxl-javascript'></i>
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="skill-item">
+                    <i class='bx bxl-python'></i>
+                    <h4>Python</h4>
+                </div>
+                <div class="skill-item">
+                    <i class='bx bx-data'></i>
+                    <h4>MySQL</h4>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="passion">
+            <h3>My <span>Passion</span></h3>
+            <p class="p">
+                I’m passionate about building meaningful software that solves real-world problems. From developing
+                responsive desktop applications to crafting clean, user-friendly web interfaces, I find joy in turning
+                ideas into functional solutions. I love diving deep into code, learning new technologies, and
+                continuously challenging myself to improve. My curiosity and creativity drive me to stay up-to-date with
+                industry trends and best practices, ensuring I always deliver high-quality work.
+            </p>
+        </div>
+
+    </section>
+    <footer class="footer" id="footer">
+        <div class="footer-box">
+            <h3>Contact Info</h3>
+            <p><i class='bx bxs-envelope'></i> jamalnadir7778@gmail.com</p>
+            <p><i class='bx bxs-map'></i> HaroonAbad, Pakistan</p>
+            <p><i class='bx bxs-time'></i> Mon - Fri: 10:00 AM – 10:00 PM</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="Index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#skills">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="#footer">Contact</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nadir Jamal | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // animation duration in ms
+            once: false,     // only animate once
+        });
+    </script>
+<script>
+  import { animate } from "https://cdn.jsdelivr.net/npm/@motionone/dom";
+
+  animate(".logo", {
+    opacity: [0, 1],
+    transform: ["scale(0.8)", "scale(1)"]
+  }, {
+    duration: 1,
+    easing: "ease-out"
+  });
+</script>
+
+</body>
+
+
+</html>

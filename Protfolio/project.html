@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nosifer&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mo-js@latest/build/mo.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollSmoother.min.js"></script>
+
+
+
+
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+        }
+
+        :root {
+            --bg-color: #1f242d;
+            --second-bg-color: #323946;
+            --text-color: #fff;
+            --main-color: #0ef;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            display: flex;
+            left: 0;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-color);
+            padding: 2rem 8%;
+            z-index: 100;
+            height: 80px;
+            margin-top: 0;
+        }
+
+        .logo {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6rem;
+            font-weight: 600;
+            color: var(--text-color);
+            animation: pulse 2s infinite;
+        }
+
+        section {
+            background: var(--bg-color);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: inline-flex;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.7rem;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #0ef;
+        }
+
+        .main {
+
+            background: var(--bg-color);
+            margin-top: 2rem;
+            padding-top: 10rem;
+            color: var(--text-color);
+            padding-bottom: 5rem;
+        }
+
+        .projects h3 {
+            font-size: 4rem;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .projects p {
+            padding-top: 2rem;
+            text-align: center;
+            line-height: 1.3;
+            font-size: 1.4rem;
+        }
+
+        .logo.scrolled-glow {
+            text-shadow: 0 0 15px #0ef, 0 0 30px #0ef;
+        }
+
+        .big {
+            /* margin-top: 2rem; */
+            margin: 2rem auto;
+            width: 80%;
+            padding: 2rem;
+            border: 2px solid var(--main-color);
+            border-radius: 15px;
+            box-shadow: 0 0 2rem var(--main-color);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+
+        }
+
+        span {
+            color: #0ef;
+        }
+
+        .kims {
+            margin-top: 2rem;
+            margin: 2rem auto;
+            width: 80%;
+            padding: 2rem;
+            border: 2px solid var(--main-color);
+            border-radius: 12px;
+            position: relative;
+            overflow: visible;
+        }
+
+        .kims h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .kims h4 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #0ef;
+        }
+
+
+
+        .kims p {
+            font-size: 1.4rem;
+            padding-top: 1rem;
+            line-height: 1.6rem;
+            text-align: justify;
+        }
+
+        .p p {
+            margin-top: .5rem;
+            gap: 1rem;
+            font-size: 1.3rem;
+            padding: .3rem;
+
+        }
+
+        .p p:hover {
+            color: rgb(0, 229, 255);
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 0 0 2rem var(--main-color);
+        }
+
+        .kims:hover {
+            box-shadow: 0 0 1.3rem #0ef;
+            transform: translateY(-5px);
+            transition: 0.5s ease;
+        }
+ .parallax-container {
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+  }
+
+  .parallax-container .kims {
+    will-change: transform, opacity;
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+  }
+        .project-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 1.6rem;
+            color: var(--main-color);
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid var(--main-color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .github-link:hover {
+            background: var(--main-color);
+            color: #000;
+        }
+
+        .footer {
+            background: var(--second-bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 5rem 9% 2rem;
+            gap: 3rem;
+        }
+
+        .footer-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--main-color);
+        }
+
+        .footer-box p,
+        .footer-box a {
+            font-size: 1.4rem;
+            margin: 0.5rem 0;
+            color: var(--text-color);
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .footer-box a:hover {
+            color: var(--main-color);
+        }
+
+        .footer-bottom {
+            width: 100%;
+            text-align: center;
+            padding-top: 3rem;
+            font-size: 1.3rem;
+            border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Nadir Jamal</a>
+        <nav class="navbar">
+            <a href="Index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="#" class="active">Projects</a>
+            <a href="#footer">Contact</a>
+        </nav>
+    </header>
+    <section class="main" id="projects">
+        <div class="big">
+            <div class="projects">
+                <h3>My <span>Projects</span></h3>
+                <p>
+                    I have built many projects using C# and .NET Framework including desktop applications, and also
+                    designed websites using HTML, CSS, and JavaScript.
+                </p>
+            </div>
+
+            <!-- KIMS -->
+             <div class="parallax-container">
+
+            <div class="kims">
+                <h3>Kitchen Inventory Management System - <span>KIMS</span></h3>
+                <p>This system manages the inventory of a restaurant efficiently with auto-reorder and real-time stock
+                    tracking.</p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>C#</p>
+                    <p>MySQL</p>
+                    <p>WinForms (.NET Framework)</p>
+                    <p>OOP</p>
+                    <p>3-tier Architecture</p>
+                </div>
+                <a href="https://github.com/AliHassanSiddiqui24/DBS25F019" class="github-link" target="_blank"><i
+                        class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+</div>
+             <div class="parallax-container">
+            <div class="kims">
+                <h3>ITEC Management System - <span>ITEC</span></h3>
+                <p>Management system for the IT Exhibition & Competition at UET Lahore. Manages participants, events,
+                    finances, and committees.</p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>C#</p>
+                    <p>MySQL</p>
+                    <p>WinForms</p>
+                    <p>SOLID</p>
+                    <p>Factory Pattern</p>
+                </div>
+                <a href="https://github.com/NADIR38/DBS25P038" class="github-link" target="_blank"><i
+                        class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+</div>
+             <div class="parallax-container">
+            <div class="kims">
+                <h3>Poultry Farm Management System</h3>
+                <p>Tracks chick mortality, batches, feed management, and inventory levels on a poultry farm.</p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>C#</p>
+                    <p>MySQL</p>
+                    <p>WinForms</p>
+                    <p>OOP</p>
+                </div>
+
+                <a href="https://github.com/javairiaqasim24/PoultryFarm" class="github-link" target="_blank"><i
+                        class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+</div>
+             <div class="parallax-container">
+            <div class="kims">
+                <h3>Car Rental System - <span>SCR</span></h3>
+                <p>A car rental booking system in C# (WinForms) and C++ (console) with vehicle tracking and rental logs.
+                </p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>C#</p>
+                    <p>C++</p>
+                    <p>OOP</p>
+                    <p>File Handling</p>
+                </div>
+                <a href="https://github.com/NADIR38/PD-Sem-1/blob/master/pd%205/apps.cpp" class="github-link"
+                    target="_blank"><i class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+</div>
+             <div class="parallax-container">
+            <div class="kims">
+                <h3>Sky Rockets - <span>Console Game</span></h3>
+                <p>A console-based rocket shooter built using ASCII graphics and game logic in C++.</p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>C++</p>
+                    <p>OOP</p>
+                    <p>Console Logic</p>
+                </div>
+                <a href="https://github.com/NADIR38/PD-Sem-1/blob/master/pd%205/game.cpp" class="github-link"
+                    target="_blank"><i class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+</div>
+             <div class="parallax-container">
+            <div class="kims">
+                <h3>Personal <span>Portfolio</span> Website</h3>
+                <p>A responsive portfolio website that displays my skills and projects using modern web technologies.
+                </p>
+                <h3><span>Tools</span></h3>
+                <div class="p">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>Boxicons</p>
+                    <p>AOS</p>
+                </div>
+                <a href="#" class="github-link" target="_blank"><i class='bx bxl-github'></i>View on GitHub</a>
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="footer">
+        <div class="footer-box">
+            <h3>Contact Info</h3>
+            <p><i class='bx bxs-envelope'></i> jamalnadir7778@gmail.com</p>
+            <p><i class='bx bxs-map'></i> HaroonAbad, Pakistan</p>
+            <p><i class='bx bxs-time'></i> Mon - Fri: 10:00 AM – 10:00 PM</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="Index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nadir Jamal | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".kims").forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                rotateX: gsap.utils.random(-90, 90),
+                rotateY: gsap.utils.random(-180, 180),
+                skewY: gsap.utils.random(-15, 15),
+                scale: 0.2,
+                y: 200,
+                transformOrigin: "center center",
+                duration: 1.5,
+                ease: "elastic.out(1, 0.5)", // bouncy elastic
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                    once: true
+                },
+                delay: i * 0.15
+            });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mo-js@latest/build/mo.min.js"></script>
+    <script>
+        // window.addEventListener("load", () => {
+        //     const cards = document.querySelectorAll(".kims");
+
+        //     cards.forEach((card, index) => {
+        //         const animation = new mojs.Html({
+        //             el: card,
+        //             y: { 100: 0 },
+        //             opacity: { 0: 1 },
+        //             duration: 1000,
+        //             delay: index * 200,
+        //             easing: 'cubic.out'
+        //         });
+
+        //         console.log("Playing Mo.js for:", card);
+        //         animation.play();
+        //     });
+        // });
+
+        document.querySelectorAll(".kims").forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                const burst = new mojs.Burst({
+                    parent: card,
+                    radius: { 0: 80 },
+                    count: 10,
+                    children: {
+                        shape: 'circle',
+                        radius: 8,
+                        fill: '#0ef',
+                        duration: 1000,
+                        easing: 'quad.out'
+                    }
+                });
+                burst.play();
+            });
+        });
+    </script>
+    <script>
+        gsap.utils.toArray(".kims").forEach((card, i) => {
+            gsap.from(card, {
+                opacity: 0,
+                rotateY: gsap.utils.random(-180, 180),
+                scale: 0.5,
+                y: 100,
+                duration: 1.2,
+                ease: "back.out(1.7)",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    onEnter: () => {
+                        confetti({
+                            particleCount: 40,
+                            spread: 70,
+                            origin: { y: 0.6 },
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        const emojis = ["✨", "💥", "🚀", "🔥", "🌟", "🎉"];
+        document.addEventListener("mousemove", e => {
+            const span = document.createElement("span");
+            span.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            span.style.position = "absolute";
+            span.style.left = e.pageX + "px";
+            span.style.top = e.pageY + "px";
+            span.style.fontSize = "1.5rem";
+            span.style.zIndex = "9999";
+            span.style.pointerEvents = "none";
+            document.body.appendChild(span);
+
+            gsap.to(span, {
+                y: -50,
+                opacity: 0,
+                duration: 1,
+                onComplete: () => span.remove()
+            });
+        });
+    </script>
+
+    <audio id="scratch" src="https://assets.mixkit.co/sfx/preview/mixkit-record-scratch-1027.mp3"></audio>
+    <script>
+        const scratch = document.getElementById("scratch");
+        document.querySelectorAll(".kims").forEach(card => {
+            card.addEventListener("mouseenter", () => {
+                scratch.currentTime = 0;
+                scratch.play();
+            });
+        });
+    </script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".logo", {
+            scrollTrigger: {
+                trigger: ".main",     // or any section after header
+                start: "top top",
+                end: "bottom top",
+                scrub: 1,
+            },
+            scale: 1.5,
+            rotate: 360,
+            color: "#0ef",
+            ease: "power2.out"
+        });
+        ScrollTrigger.create({
+  trigger: ".main",
+  start: "top top",
+  end: "bottom top",
+  toggleClass: {
+    targets: ".logo",
+    className: "scrolled-glow"
+  }
+});
+
+    </script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".parallax-container").forEach((section, i) => {
+    const card = section.querySelector(".kims");
+
+    gsap.fromTo(card,
+      { y: 100, opacity: 0, scale: 0.85 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        ease: "power3.out",
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          end: "bottom 40%",
+          scrub: true
+        }
+      }
+    );
+
+    gsap.to(card, {
+      scale: 1.02,
+      scrollTrigger: {
+        trigger: section,
+        start: "top center",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+  });
+</script>
+</body>
+
+</html>
